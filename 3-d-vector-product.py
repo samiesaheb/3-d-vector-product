@@ -1,46 +1,41 @@
-#Program to find dot product or cross product of two 3-dimensional vectors
-
-print("Hello! This a program to find either the dot product or cross product of \
-      two 3-dimensional vectors:")
-
-#First vector
-i1 = int(input("Enter the value of x for your first vector: "))
-j1 = int(input("Enter the value of y for your first vector: "))
-k1 = int(input("Enter the value of z for your first vector: "))
-vector1 = "(" + str(i1) + ", " + str(j1) + ", " + str(k1) + ")"
+#Program to find the dot/cross product of two 3-d vectors
+v1 = [] #First vector
+v2 = [] #Second vector
+v3 = [] #Third vector
+print("This is a program to find the dot/cross product of two 3-d vectors")
 print("")
-#Second vector
-i2 = int(input("Enter the value of x for your second vector: "))
-j2 = int(input("Enter the value of y for your second vector: "))
-k2 = int(input("Enter the value of z for your second vector: "))
-vector2 = "(" + str(i2) + ", " + str(j2) + ", " + str(k2) + ")"
 
-print("Your two vectors are")
+print("Enter coordinates of the first vector:")
+for n in range(3):
+    v1.append(int(input()))
+print("First vector:",v1)
+print("")
 
-print(vector1, "and",vector2)
-print("Do you want to find the dot product or the cross product of these vectors?")
+print("Enter coordinates of the second vector:")
+for n in range(3):
+    v2.append(int(input()))
+print("Second vector:",v2)
+print("")
+
+print("Do you want to find the dot product ('d') or the cross product ('c') ?")
 
 while True:
-    user_input = input("[dot]/[cross]?: ")
-    if (user_input == "dot"):
-        dot_product = i1*i2 + j1*j2 + k1*k2
-        print(vector1,".",vector2,"=",dot_product)
-        break #exits loop
-    elif (user_input == "cross"):
-        i = (j1*k2-k1*j2)
-        j = (i1*k2-k1*i2)
+    user_input = input()
+    if (user_input == "d"):
+        dot_product = v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2]
+        print(v1,".",v2,"==",dot_product)
+        break #Exits loop
+    elif (user_input == "c"):
+        i = (v1[1]*v2[2] - v1[2]*v2[1])
+        j = (v1[0]*v2[2] - v1[2]*v2[0])
         j = -j
-        k = (i1*j2-j1*i2)
-        cross_product = "(" + str(i) + ", " + str(j) + ", " + str(k) + ")"
-        print(vector1,"x",vector2,"==",cross_product)
-        break #exits loop
+        k = (v1[0]*v2[1] - v1[1]*v2[0])
+        v3.append(i)
+        v3.append(j)
+        v3.append(k)
+        print(v1,"x",v2,"==",v3)
+        break #Exits loop
     else:
-        print("Sorry, the program did not see you enter 'dot' or 'cross'")
+        print("Sorry, the program did not see you enter 'd' or 'c'")
         print("Try again")
-        continue #goes back to while loop
-
-
-
-
-
-
+        continue #Goes back to while loop

@@ -1,6 +1,5 @@
 # 3-d-vector-product
-Program written in Python to find either the dot product or cross product of two 3-d vectors
-Beginner at programming so forgive me if program has too many lines. 
+Programs written in Python and Java to find the dot/cross product of 2 3-d vectors.
 
 Formula used to find dot product:
 *********************************************************
